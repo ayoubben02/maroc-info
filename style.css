@@ -4,3 +4,9 @@
     margin-top: 30px;
     margin-bottom: 30px;
 }
+
+.card:hover {
+  transform: translateY(-5px);
+  transition: 0.3s;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+}
