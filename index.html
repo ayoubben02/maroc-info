@@ -1,151 +1,149 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>maroc info</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maroc Info | L’actualité marocaine au cœur de l’information</title>
 
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body class="bg-light bg-gradient"> 
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="style.css">
+</head>
 
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+<body class="bg-light bg-gradient">
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img
-  src="https://res.cloudinary.com/dngsrwhxz/image/upload/w_200/f_auto,q_auto/v1767093889/maroc-info-logo_fdyu2n.png"
-  alt="Maroc Info Logo"
-/>
-
+    <a class="navbar-brand" href="index.html">
+      <img src="https://res.cloudinary.com/dngsrwhxz/image/upload/w_200/f_auto,q_auto/v1767093889/maroc-info-logo_fdyu2n.png" alt="Maroc Info Logo">
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-      
+        <li class="nav-item"><a class="nav-link active fw-bold text-danger" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="politique.html">POLITIQUE</a></li>
+        <li class="nav-item"><a class="nav-link" href="economie.html">ECONOMIE</a></li>
+        <li class="nav-item"><a class="nav-link" href="sport.html">SPORT</a></li>
+        <li class="nav-item"><a class="nav-link" href="culture.html">CULTURE</a></li>
+        <li class="nav-item"><a class="nav-link" href="technologie.html">TECHNOLOGIE</a></li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
     </div>
-  </nav>
-
-  <div class="container-fluid text-center my-1">
-  <h3>
-  Maroc Info ->
-  <small class="text-body-secondary">l’actualité marocaine au cœur de l’information</small>
-</h3>
   </div>
+</nav>
 
+<!-- HERO TITLE -->
+<header class="container text-center my-4">
+  <h1 class="fw-bold">
+    Maroc Info
+    <small class="d-block fs-5 text-muted mt-2">
+      l’actualité marocaine au cœur de l’information
+    </small>
+  </h1>
+</header>
 
-  <div id="carouselExampleIndicators" class="carousel slide carousel-container">
+<!-- CAROUSEL -->
+<div id="carouselExampleIndicators" class="carousel slide shadow-sm">
   <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></button>
   </div>
+
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="https://res.cloudinary.com/dngsrwhxz/image/upload/v1767185694/maroc-info-carousel1_mwxw7o.png" class="d-block w-100" alt="...">
+      <img src="https://res.cloudinary.com/dngsrwhxz/image/upload/v1767185694/maroc-info-carousel1_mwxw7o.png" class="d-block w-100" alt="Actualité Maroc">
     </div>
     <div class="carousel-item">
-      <img src="https://res.cloudinary.com/dngsrwhxz/image/upload/v1767190404/maroc-info-carousel2_prfzzx.png" class="d-block w-100" alt="...">
+      <img src="https://res.cloudinary.com/dngsrwhxz/image/upload/v1767190404/maroc-info-carousel2_prfzzx.png" class="d-block w-100" alt="Culture Maroc">
     </div>
     <div class="carousel-item">
-      <img src="https://res.cloudinary.com/dngsrwhxz/image/upload/v1767190398/maroc-info-carousel3_znuqos.png" class="d-block w-100" alt="...">
+      <img src="https://res.cloudinary.com/dngsrwhxz/image/upload/v1767190398/maroc-info-carousel3_znuqos.png" class="d-block w-100" alt="Développement Maroc">
     </div>
   </div>
+
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
+    <span class="carousel-control-prev-icon"></span>
   </button>
   <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
+    <span class="carousel-control-next-icon"></span>
   </button>
-  </div>
+</div>
 
+<!-- INTRO TEXT -->
+<section class="container my-5">
 
-
-    <div class="container text-center my-3">
-    <div class="row">
-      <div class="col-md-6">
-        Le Maroc est un pays en mouvement constant, à la croisée des cultures, des continents et des enjeux économiques, sociaux et politiques. Maroc Info naît avec l’ambition de devenir une source fiable, claire et accessible pour suivre l’actualité marocaine et mieux comprendre les transformations qui façonnent le Royaume.
-      </div>
-      <div class="col">
-      </div>
+  <!-- TEXT ROW -->
+  <div class="row">
+    <div class="col-md-6">
+      <p class="lead">
+        Le Maroc est un pays en mouvement constant, à la croisée des cultures,
+        des continents et des enjeux économiques, sociaux et politiques.
+      </p>
+      <p class="text-muted">
+        Maroc Info a pour ambition de devenir une source fiable, claire et accessible
+        pour suivre l’actualité marocaine et comprendre les transformations
+        qui façonnent le Royaume.
+      </p>
     </div>
   </div>
 
-  <div class="container text-center my-3">
-    <div class="row">
-      <div class="col-md-6">
-        
-      </div>
-      <div class="col">
-        <figure class="figure">
-          <img src="https://res.cloudinary.com/dngsrwhxz/image/upload/v1767195044/maroc-info-figure1_qleafb.png" class="figure-img img-fluid rounded user-select-none" alt="...">
-          <figcaption class="figure-caption text-end">Tajine marocain traditionnel à motifs bleus</figcaption>
-        </figure>
-      </div>
+  <!-- IMAGE ROW (RIGHT ALIGNED) -->
+  <div class="row mt-4">
+    <div class="col-md-6 ms-auto text-center">
+      <figure class="figure">
+        <img src="https://res.cloudinary.com/dngsrwhxz/image/upload/v1767195044/maroc-info-figure1_qleafb.png"
+             class="figure-img img-fluid rounded user-select-none"
+             alt="Culture marocaine">
+        <figcaption class="figure-caption text-end">
+          Tajine marocain traditionnel
+        </figcaption>
+      </figure>
     </div>
   </div>
 
+</section>
 
 
-  <div class="container text-center my-3">
-    <div class="row">
-      <div class="col-md-6">
-            <h2 class="fw-bold mb-3">Ce que couvre Maroc Info</h2>
-            <ul class="list-unstyled mt-3">
-              <li class="d-flex align-items-start mb-3">
-                <i class="bi bi-newspaper text-danger fs-4 me-3"></i>
-                <span>L’actualité nationale et régionale</span>
-              </li>
-              <li class="d-flex align-items-start mb-3">
-                <i class="bi bi-graph-up-arrow text-danger fs-4 me-3"></i>
-                <span>L’économie et l’emploi</span>
-              </li>
-              <li class="d-flex align-items-start mb-3">
-                <i class="bi bi-people text-danger fs-4 me-3"></i>
-                <span>La société, la culture et le sport</span>
-              </li>
-              <li class="d-flex align-items-start">
-                <i class="bi bi-lightbulb text-danger fs-4 me-3"></i>
-                <span>Les initiatives locales et les projets d’avenir</span>
-              </li>
-            </ul>
-      </div>
-      <div class="col">
-      </div>
+<!-- COVERAGE -->
+<section class="container my-5">
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="fw-bold mb-3">Ce que couvre Maroc Info</h2>
+      <ul class="list-unstyled mt-3">
+        <li class="d-flex align-items-start mb-3">
+          <i class="bi bi-newspaper text-danger fs-4 me-3"></i>
+          <span>L’actualité nationale et régionale</span>
+        </li>
+        <li class="d-flex align-items-start mb-3">
+          <i class="bi bi-graph-up-arrow text-danger fs-4 me-3"></i>
+          <span>L’économie et l’emploi</span>
+        </li>
+        <li class="d-flex align-items-start mb-3">
+          <i class="bi bi-people text-danger fs-4 me-3"></i>
+          <span>La société, la culture et le sport</span>
+        </li>
+        <li class="d-flex align-items-start">
+          <i class="bi bi-lightbulb text-danger fs-4 me-3"></i>
+          <span>Les initiatives locales et les projets d’avenir</span>
+        </li>
+      </ul>
     </div>
   </div>
+</section>
 
+<!-- FOOTER -->
+<footer class="bg-white border-top py-4">
+  <div class="container text-center text-muted">
+    © 2025 Maroc Info — Toute l’actualité du Maroc
+  </div>
+</footer>
 
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-  </body>
-</html> 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
