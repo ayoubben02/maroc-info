@@ -3,147 +3,368 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Maroc Info | L’actualité marocaine au cœur de l’information</title>
-
-  <!-- Bootstrap -->
+  <title>Maroc Info | L'actualite marocaine, claire et structuree</title>
+  <meta
+    name="description"
+    content="Maroc Info propose une lecture claire de l'actualite marocaine en politique, economie, sport, culture et technologie."
+  >
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
   <link rel="stylesheet" href="style.css">
 </head>
+<body data-home-news="true">
+  <div class="site-shell">
+    <div id="navbar"></div>
 
-<body class="bg-light bg-gradient">
+    <main class="container">
+      <section class="hero-panel mt-3 mt-lg-4">
+        <div class="hero-aurora"></div>
+        <div class="row align-items-stretch g-4">
+          <div class="col-lg-8">
+            <div class="hero-copy-stack">
+              <span class="eyebrow">
+                <i class="bi bi-stars"></i>
+                Salle de redaction
+              </span>
+              <h1 class="hero-title">Le Maroc en tension, en mouvement et en profondeur.</h1>
+              <p class="hero-copy mb-0">
+                Un front page pense comme un magazine vivant: plus d'angles, plus de contraste visuel,
+                et une lecture qui passe du signal rapide au dossier fort sans tomber dans le layout attendu.
+              </p>
+              <div class="hero-actions">
+                <a class="btn btn-brand" href="#home-headline-feed">Entrer dans l'edition</a>
+                <a class="btn btn-outline-brand" href="#rubriques">Explorer les rubriques</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <aside class="hero-manifesto h-100">
+              <div class="hero-manifesto-top">
+                <small>Edition du jour</small>
+                <span>Maroc Info / Front Page</span>
+              </div>
+              <h2>Un site d'actus qui respire comme une une, pas comme une grille generique.</h2>
+              <p class="mb-0">Le but n'est pas seulement d'afficher des cartes. Le but est de fabriquer du rythme: une ouverture forte, un radar nerveux, des respirations editoriales et des entres distinctes.</p>
+            </aside>
+          </div>
+        </div>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="index.html">
-      <img src="https://res.cloudinary.com/dngsrwhxz/image/upload/w_200/f_auto,q_auto/v1767093889/maroc-info-logo_fdyu2n.png" alt="Maroc Info Logo">
-    </a>
+        <div class="hero-bands">
+          <div class="hero-band">
+            <span>Politique</span>
+            <strong>institutions</strong>
+          </div>
+          <div class="hero-band">
+            <span>Economie</span>
+            <strong>chantiers</strong>
+          </div>
+          <div class="hero-band">
+            <span>Societe</span>
+            <strong>terrain</strong>
+          </div>
+          <div class="hero-band">
+            <span>Monde</span>
+            <strong>diplomatie</strong>
+          </div>
+        </div>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+        <div class="row hero-metrics g-3">
+          <div class="col-md-4">
+            <div class="metric-card metric-card-shift">
+              <div class="metric-value">08</div>
+              <p class="metric-label mb-0">angles editoriaux qui structurent maintenant l'ensemble du site.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="metric-card">
+              <div class="metric-value">Fast</div>
+              <p class="metric-label mb-0">cache, chargement progressif et blocs plus denses sur l'accueil.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="metric-card metric-card-accent">
+              <div class="metric-value">Live</div>
+              <p class="metric-label mb-0">une page d'accueil qui ressemble davantage a une edition qu'a un simple hub.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link active fw-bold text-danger" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="politique.html">POLITIQUE</a></li>
-        <li class="nav-item"><a class="nav-link" href="economie.html">ECONOMIE</a></li>
-        <li class="nav-item"><a class="nav-link" href="sport.html">SPORT</a></li>
-        <li class="nav-item"><a class="nav-link" href="culture.html">CULTURE</a></li>
-        <li class="nav-item"><a class="nav-link" href="technologie.html">TECHNOLOGIE</a></li>
-      </ul>
-    </div>
+      <section class="section-block">
+        <div class="row g-4 align-items-stretch mb-4">
+          <div class="col-lg-7">
+            <div class="content-panel h-100 intro-panel">
+              <h2 class="section-title mb-2" id="home-feed-status-title">Dernieres actualites du Maroc</h2>
+              <p class="section-copy mb-0" id="home-feed-status-copy">Le site prepare une selection en direct depuis les sources d'actualite.</p>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="spotlight-card h-100 pulse-panel">
+              <div class="spotlight-icon"><i class="bi bi-lightning-charge"></i></div>
+              <h3 class="h5">Pulse</h3>
+              <p class="text-muted mb-0">Cette zone doit donner l'impression d'un front nerveux: plus de contraste, plus de densite, et des points d'entree moins sages.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row g-4 homepage-mosaic" id="home-news-feed"></div>
+      </section>
+
+      <section class="section-block pt-0">
+        <div class="row g-4">
+          <div class="col-lg-8">
+            <div class="content-panel h-100 headline-shell">
+              <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+                <div>
+                  <h2 class="section-title mb-1">A la une</h2>
+                  <p class="section-copy mb-0">Les sujets les plus visibles du moment, servis depuis le cache du projet.</p>
+                </div>
+              </div>
+              <div class="row g-4" id="home-headline-feed"></div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="content-panel h-100 radar-shell">
+              <h2 class="section-title mb-2">Radar rapide</h2>
+              <p class="section-copy mb-3">Un balayage dense pour donner au site une impression de flux continu.</p>
+              <div id="home-latest-list"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block pt-0">
+        <div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-end mb-4 gap-3">
+          <div>
+            <h2 class="section-title mb-2">Le point fort du moment</h2>
+            <p class="section-copy mb-0">Une selection plus visuelle pour donner de la profondeur a la page d'accueil.</p>
+          </div>
+          <a class="btn btn-outline-brand" href="monde.html">Explorer les grands dossiers</a>
+        </div>
+        <div class="row g-4 spotlight-grid" id="home-spotlight-feed"></div>
+      </section>
+
+      <section class="section-block">
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="content-panel h-100 manifesto-panel">
+              <h2 class="section-title">Une lecture plus nette de l'actualite marocaine</h2>
+              <p class="section-copy">
+                Le Maroc avance sur plusieurs fronts a la fois: reformes institutionnelles, transition
+                economique, diplomatie, creation culturelle et acceleration numerique. Un site d'information
+                utile doit rendre ces dynamiques comprehensibles d'un seul coup d'oeil.
+              </p>
+              <ul class="list-clean">
+                <li><i class="bi bi-check2-circle"></i><span>Des pages coherentes, avec une hierarchie editoriale plus credibile.</span></li>
+                <li><i class="bi bi-check2-circle"></i><span>Des cartes et sections homogenes pour faciliter le balayage visuel.</span></li>
+                <li><i class="bi bi-check2-circle"></i><span>Une identite plus premium inspiree de la presse magazine et institutionnelle.</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="row g-3 h-100 feature-tower">
+              <div class="col-sm-6">
+                <div class="feature-card h-100 feature-card-tilt">
+                  <div class="icon-wrap"><i class="bi bi-bank2"></i></div>
+                  <h3 class="h5">Politique</h3>
+                  <p class="text-muted">Institutions, diplomatie, gouvernance et execution des grandes reformes.</p>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="feature-card h-100 feature-card-accent">
+                  <div class="icon-wrap"><i class="bi bi-graph-up-arrow"></i></div>
+                  <h3 class="h5">Economie</h3>
+                  <p class="text-muted">Croissance, investissement, emploi et signaux de transformation productive.</p>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="feature-card h-100 feature-card-accent">
+                  <div class="icon-wrap"><i class="bi bi-trophy"></i></div>
+                  <h3 class="h5">Sport</h3>
+                  <p class="text-muted">Performances, grands rendez-vous et poids croissant du sport dans l'image du pays.</p>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="feature-card h-100 feature-card-tilt">
+                  <div class="icon-wrap"><i class="bi bi-cpu"></i></div>
+                  <h3 class="h5">Technologie</h3>
+                  <p class="text-muted">Innovation, numerique public, startups et nouveaux usages.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block pt-0">
+        <div class="row g-4">
+          <div class="col-lg-8">
+            <div class="content-panel h-100 member-panel">
+              <h2 class="section-title">Nouveau: espace membre</h2>
+              <p class="section-copy mb-0">
+                Le projet dispose maintenant d'une authentification locale avec inscription, connexion,
+                session persistante et interface compte. C'est une bonne base pour ajouter des favoris,
+                des preferences ou une administration plus tard.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="spotlight-card h-100 member-cta">
+              <div class="spotlight-icon"><i class="bi bi-person-lock"></i></div>
+              <h3 class="h5">Compte utilisateur</h3>
+              <p class="text-muted">Accedez a la page de connexion et testez le nouveau flux membre.</p>
+              <a class="btn btn-brand mt-3" href="auth.html">Ouvrir l'espace membre</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" id="rubriques">
+        <div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-end mb-4 gap-3">
+          <div>
+            <h2 class="section-title mb-2">Les rubriques du site</h2>
+            <p class="section-copy mb-0">Le site couvre des angles plus larges pour paraitre plus riche, plus utile et plus rapide a parcourir.</p>
+          </div>
+          <a class="btn btn-outline-brand" href="regions.html">Nouvelle rubrique territoriale</a>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-xl-4">
+            <a class="category-card d-block" href="politique.html">
+              <img src="https://images.unsplash.com/photo-1541872705-1f73c6400ec9?auto=format&fit=crop&w=1200&q=80" alt="Rubrique politique">
+              <div class="category-card-body">
+                <span class="category-label"><i class="bi bi-bank2"></i>Politique</span>
+                <h3 class="h4 mt-3">Comprendre les institutions et les arbitrages publics</h3>
+                <p class="text-muted mb-0">Une rubrique centree sur les decisions, la diplomatie et le tempo de l'action publique.</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <a class="category-card d-block" href="economie.html">
+              <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80" alt="Rubrique economie">
+              <div class="category-card-body">
+                <span class="category-label"><i class="bi bi-graph-up-arrow"></i>Economie</span>
+                <h3 class="h4 mt-3">Suivre les signaux de croissance et de transformation</h3>
+                <p class="text-muted mb-0">Investissement, industrie, emploi, finances et projets structurants.</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <a class="category-card d-block" href="societe.html">
+              <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80" alt="Rubrique societe">
+              <div class="category-card-body">
+                <span class="category-label"><i class="bi bi-people"></i>Societe</span>
+                <h3 class="h4 mt-3">Suivre l'education, la sante et les sujets du quotidien</h3>
+                <p class="text-muted mb-0">Une rubrique pour donner plus d'epaisseur sociale au site et a l'actualite marocaine.</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <a class="category-card d-block" href="sport.html">
+              <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=1200&q=80" alt="Rubrique sport">
+              <div class="category-card-body">
+                <span class="category-label"><i class="bi bi-trophy"></i>Sport</span>
+                <h3 class="h4 mt-3">Mesurer l'impact des grandes competitions et des talents marocains</h3>
+                <p class="text-muted mb-0">Football, haut niveau, evenements et rayonnement international.</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6 col-xl-6">
+            <a class="category-card d-block" href="monde.html">
+              <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=1200&q=80" alt="Rubrique monde">
+              <div class="category-card-body">
+                <span class="category-label"><i class="bi bi-globe-europe-africa"></i>Monde</span>
+                <h3 class="h4 mt-3">Lire la place du Maroc dans les grands equilibres internationaux</h3>
+                <p class="text-muted mb-0">Diplomatie, Afrique, Europe, commerce et partenariats strategiques.</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6 col-xl-6">
+            <a class="category-card d-block" href="culture.html">
+              <img src="https://images.unsplash.com/photo-1484557985045-edf25e08da73?auto=format&fit=crop&w=1200&q=80" alt="Rubrique culture">
+              <div class="category-card-body">
+                <span class="category-label"><i class="bi bi-palette"></i>Culture</span>
+                <h3 class="h4 mt-3">Mettre en avant les scenes, les traditions et les imaginaires</h3>
+                <p class="text-muted mb-0">Patrimoine, creation contemporaine, festivals et arts de vivre.</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6 col-xl-6">
+            <a class="category-card d-block" href="regions.html">
+              <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80" alt="Rubrique regions">
+              <div class="category-card-body">
+                <span class="category-label"><i class="bi bi-geo-alt"></i>Regions</span>
+                <h3 class="h4 mt-3">Donner plus de place aux villes, aux chantiers et aux territoires</h3>
+                <p class="text-muted mb-0">Casablanca, Rabat, Tanger, Marrakech, Agadir, Fes, Dakhla et les signaux du terrain.</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6 col-xl-6">
+            <a class="category-card d-block" href="technologie.html">
+              <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80" alt="Rubrique technologie">
+              <div class="category-card-body">
+                <span class="category-label"><i class="bi bi-cpu"></i>Technologie</span>
+                <h3 class="h4 mt-3">Observer l'innovation qui change les usages au Maroc</h3>
+                <p class="text-muted mb-0">Services numeriques, startups, IA et transformation des organisations.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="editorial-card h-100">
+              <div class="spotlight-icon"><i class="bi bi-journal-text"></i></div>
+              <h3 class="h4">Une promesse editoriale simple</h3>
+              <p class="text-muted">Faire gagner du temps au lecteur avec une presentation plus serieuse, plus claire et plus stable d'une page a l'autre.</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="editorial-card h-100">
+              <div class="spotlight-icon"><i class="bi bi-diagram-3"></i></div>
+              <h3 class="h4">Un langage visuel commun</h3>
+              <p class="text-muted">Navigation, headers, cartes et footer parlent enfin la meme langue graphique sur tout le projet.</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="editorial-card h-100">
+              <div class="spotlight-icon"><i class="bi bi-shield-check"></i></div>
+              <h3 class="h4">Une base plus solide pour la suite</h3>
+              <p class="text-muted">Le site est maintenant pret pour accueillir davantage de contenus ou une integration de donnees plus riche.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-panel">
+          <div class="row g-4 align-items-center">
+            <div class="col-lg-7">
+              <h2 class="h4 mb-2">Maroc Info</h2>
+              <p class="footer-note mb-0">Une vitrine plus professionnelle pour presenter l'actualite marocaine avec clarte, rythme et coherence.</p>
+            </div>
+            <div class="col-lg-5">
+              <div class="footer-links">
+                <a href="politique.html">Politique</a>
+                <a href="economie.html">Economie</a>
+                <a href="societe.html">Societe</a>
+                <a href="sport.html">Sport</a>
+                <a href="culture.html">Culture</a>
+                <a href="monde.html">Monde</a>
+                <a href="regions.html">Regions</a>
+                <a href="technologie.html">Technologie</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
   </div>
-</nav>
 
-<!-- HERO TITLE -->
-<header class="container text-center my-4">
-  <h1 class="fw-bold">
-    Maroc Info
-    <small class="d-block fs-5 text-muted mt-2">
-      l’actualité marocaine au cœur de l’information
-    </small>
-  </h1>
-</header>
-
-<!-- CAROUSEL -->
-<div id="carouselExampleIndicators" class="carousel slide shadow-sm">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></button>
-  </div>
-
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="https://res.cloudinary.com/dngsrwhxz/image/upload/v1767185694/maroc-info-carousel1_mwxw7o.png" class="d-block w-100" alt="Actualité Maroc">
-    </div>
-    <div class="carousel-item">
-      <img src="https://res.cloudinary.com/dngsrwhxz/image/upload/v1767190404/maroc-info-carousel2_prfzzx.png" class="d-block w-100" alt="Culture Maroc">
-    </div>
-    <div class="carousel-item">
-      <img src="https://res.cloudinary.com/dngsrwhxz/image/upload/v1767190398/maroc-info-carousel3_znuqos.png" class="d-block w-100" alt="Développement Maroc">
-    </div>
-  </div>
-
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </button>
-</div>
-
-<!-- INTRO TEXT -->
-<section class="container my-5">
-
-  <!-- TEXT ROW -->
-  <div class="row">
-    <div class="col-md-6">
-      <p class="lead">
-        Le Maroc est un pays en mouvement constant, à la croisée des cultures,
-        des continents et des enjeux économiques, sociaux et politiques.
-      </p>
-      <p class="text-muted">
-        Maroc Info a pour ambition de devenir une source fiable, claire et accessible
-        pour suivre l’actualité marocaine et comprendre les transformations
-        qui façonnent le Royaume.
-      </p>
-    </div>
-  </div>
-
-  <!-- IMAGE ROW (RIGHT ALIGNED) -->
-  <div class="row mt-4">
-    <div class="col-md-6 ms-auto text-center">
-      <figure class="figure">
-        <img src="https://res.cloudinary.com/dngsrwhxz/image/upload/v1767195044/maroc-info-figure1_qleafb.png"
-             class="figure-img img-fluid rounded user-select-none"
-             alt="Culture marocaine">
-        <figcaption class="figure-caption text-end">
-          Tajine marocain traditionnel
-        </figcaption>
-      </figure>
-    </div>
-  </div>
-
-</section>
-
-
-<!-- COVERAGE -->
-<section class="container my-5">
-  <div class="row">
-    <div class="col-md-6">
-      <h2 class="fw-bold mb-3">Ce que couvre Maroc Info</h2>
-      <ul class="list-unstyled mt-3">
-        <li class="d-flex align-items-start mb-3">
-          <i class="bi bi-newspaper text-danger fs-4 me-3"></i>
-          <span>L’actualité nationale et régionale</span>
-        </li>
-        <li class="d-flex align-items-start mb-3">
-          <i class="bi bi-graph-up-arrow text-danger fs-4 me-3"></i>
-          <span>L’économie et l’emploi</span>
-        </li>
-        <li class="d-flex align-items-start mb-3">
-          <i class="bi bi-people text-danger fs-4 me-3"></i>
-          <span>La société, la culture et le sport</span>
-        </li>
-        <li class="d-flex align-items-start">
-          <i class="bi bi-lightbulb text-danger fs-4 me-3"></i>
-          <span>Les initiatives locales et les projets d’avenir</span>
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="bg-white border-top py-4">
-  <div class="container text-center text-muted">
-    © 2025 Maroc Info — Toute l’actualité du Maroc
-  </div>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

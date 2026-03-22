@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Connexion | Maroc Info</title>
+  <meta
+    name="description"
+    content="Connectez-vous ou creez un compte Maroc Info pour personnaliser votre experience."
+  >
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="auth">
+  <div class="site-shell">
+    <div id="navbar"></div>
+
+    <main class="container">
+      <section class="page-hero mt-3 mt-lg-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-7">
+            <span class="eyebrow">
+              <i class="bi bi-person-lock"></i>
+              Espace membre
+            </span>
+            <h1 class="page-title">Connectez-vous pour retrouver une experience plus personnelle</h1>
+            <p class="page-copy mb-0">
+              Cette premiere version ajoute une authentification locale simple et propre:
+              creation de compte, connexion, session persistante et affichage de l'etat utilisateur dans l'interface.
+            </p>
+          </div>
+          <div class="col-lg-5">
+            <div class="brief-card h-100">
+              <small>Ce qui est deja pret</small>
+              <h2 class="h4 mt-2">Base solide pour la suite</h2>
+              <p class="text-muted mb-0">Cette fondation pourra ensuite accueillir favoris, preferences, historique de lecture ou espace admin.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block pt-0">
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="content-panel h-100">
+              <h2 class="section-title">Creer un compte</h2>
+              <p class="section-copy">Inscription rapide avec nom, email et mot de passe.</p>
+              <form id="register-form" class="auth-form">
+                <label class="auth-label" for="register-name">Nom</label>
+                <input class="auth-input" id="register-name" name="name" type="text" minlength="2" required>
+
+                <label class="auth-label" for="register-email">Email</label>
+                <input class="auth-input" id="register-email" name="email" type="email" required>
+
+                <label class="auth-label" for="register-password">Mot de passe</label>
+                <input class="auth-input" id="register-password" name="password" type="password" minlength="8" required>
+
+                <button class="btn btn-brand" type="submit">Creer mon compte</button>
+              </form>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="content-panel h-100">
+              <h2 class="section-title">Se connecter</h2>
+              <p class="section-copy">Utilisez votre email et votre mot de passe pour ouvrir votre session.</p>
+              <form id="login-form" class="auth-form">
+                <label class="auth-label" for="login-email">Email</label>
+                <input class="auth-input" id="login-email" name="email" type="email" required>
+
+                <label class="auth-label" for="login-password">Mot de passe</label>
+                <input class="auth-input" id="login-password" name="password" type="password" minlength="8" required>
+
+                <button class="btn btn-brand" type="submit">Connexion</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block pt-0">
+        <div class="content-panel">
+          <h2 class="section-title mb-2">Etat de la session</h2>
+          <p class="section-copy mb-3" id="auth-status-copy">Verification de la session en cours...</p>
+          <div id="auth-account-card" class="account-card"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-panel">
+          <div class="row g-4 align-items-center">
+            <div class="col-lg-8">
+              <h2 class="h4 mb-2">Authentification</h2>
+              <p class="footer-note mb-0">Connexion locale, session securisee par cookie et base utilisateur persistante dans le projet.</p>
+            </div>
+            <div class="col-lg-4">
+              <div class="footer-links">
+                <a href="index.html">Accueil</a>
+                <a href="politique.html">Politique</a>
+                <a href="economie.html">Economie</a>
+                <a href="technologie.html">Technologie</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

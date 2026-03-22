@@ -1,0 +1,729 @@
+MAROC INFO PROJECT EXPLANATION
+==============================
+
+1. PROJECT SUMMARY
+
+Maroc Info is a small full-stack web project built with:
+- a static frontend in HTML, CSS, and JavaScript
+- a lightweight Node.js backend using the built-in http module
+- a local JSON file for user persistence
+- a public news source (GDELT) for live category-based news
+
+The project behaves like an online news website about Morocco. It has:
+- a homepage
+- category pages
+- an authentication page
+- a local backend API
+- session-based login with cookies
+
+
+2. MAIN GOAL OF THE PROJECT
+
+The goal is to present Moroccan news in a cleaner and more structured way.
+
+The project combines:
+- editorial pages for categories like politics, economy, sport, culture, and technology
+- dynamic news loading from a backend API
+- local user authentication for account creation and login
+
+So this is not only a static website. It is a small real web application.
+
+
+3. TECHNOLOGIES USED
+
+Frontend:
+- HTML files for pages
+- CSS in style.css
+- JavaScript in script.js
+- Bootstrap 5 for layout and components
+- Bootstrap Icons for icons
+
+Backend:
+- Node.js
+- built-in http module
+- built-in fs module for file storage
+- built-in crypto module for password hashing and session tokens
+
+Data:
+- data/users.json for registered users
+- posts.json for local fallback content
+
+External source:
+- GDELT API for live news articles
+
+
+4. PROJECT STRUCTURE
+
+Root files:
+- index.html: homepage
+- politique.html: politics page
+- economie.html: economy page
+- sport.html: sport page
+- culture.html: culture page
+- technologie.html: technology page
+- auth.html: login and register page
+- navbar.html: shared navbar markup loaded dynamically
+- script.js: shared frontend behavior
+- style.css: site styling
+- posts.json: local fallback articles
+- package.json: project metadata and scripts
+- README.md: short project documentation
+
+Data folder:
+- data/users.json: stores registered users
+
+Server folder:
+- server/app.js: main HTTP server and routing
+- server/auth-service.js: registration, login, sessions, cookies
+- server/config.js: shared config values
+- server/gdelt.js: fetches and normalizes live news from GDELT
+- server/news-service.js: category-based news logic with caching
+- server/static-server.js: serves local HTML/CSS/JS files
+
+
+5. HOW THE FRONTEND WORKS
+
+The frontend is made of normal HTML pages.
+
+Each page loads:
+- Bootstrap CSS
+- Bootstrap Icons
+- style.css
+- script.js
+
+The navbar is not repeated manually inside each page body. Instead:
+- each page contains a div with id="navbar"
+- script.js fetches navbar.html
+- the fetched HTML is inserted into the page
+
+This keeps navigation consistent across the whole site.
+
+
+6. HOME PAGE
+
+The homepage is index.html.
+
+Its job is to:
+- introduce the Maroc Info brand
+- present the categories
+- explain the editorial direction
+- link users to category pages
+- link users to the auth page
+
+This page is mostly static content, but it still loads the shared navbar and auth UI state through script.js.
+
+
+7. CATEGORY PAGES
+
+The category pages are:
+- politique.html
+- economie.html
+- sport.html
+- culture.html
+- technologie.html
+
+Each category page:
+- has a hero section
+- describes the editorial angle of that topic
+- contains a news feed container with id="news-feed"
+- sets a body attribute like data-news-page="politique"
+
+That body attribute is important because script.js reads it and decides which category to request from the backend.
+
+
+8. AUTHENTICATION PAGE
+
+The auth page is auth.html.
+
+It contains:
+- a register form
+- a login form
+- a session status area
+- an account card area
+
+The register form sends:
+- name
+- email
+- password
+
+The login form sends:
+- email
+- password
+
+The page also displays whether the user is currently logged in.
+
+
+9. FRONTEND LOGIC IN SCRIPT.JS
+
+script.js is the main browser-side controller of the project.
+
+It runs when the page is loaded and does four important things:
+- loadNavbar()
+- hydrateAuthUi()
+- renderAutomatedNews()
+- bindAuthForms()
+
+What each one does:
+
+loadNavbar():
+- fetches navbar.html
+- injects it into the current page
+- marks the active navigation link
+
+hydrateAuthUi():
+- requests the current session from the backend
+- updates the navbar auth area
+- updates the account card on auth.html
+
+bindAuthForms():
+- listens for register form submission
+- listens for login form submission
+- listens for logout button clicks
+
+renderAutomatedNews():
+- detects the current category page
+- calls the backend for live news
+- renders cards into the page
+- falls back to local content if live data fails
+
+
+10. API BASE URL HANDLING
+
+script.js now includes API helper logic so the frontend can work in different local setups.
+
+It can:
+- use same-origin API calls when the site is opened from the Node server
+- automatically target localhost:3000 when the page is opened from another local dev port
+- include cookies in requests with credentials: "include"
+
+This is important for authentication because session cookies must travel with the requests.
+
+
+11. HOW NEWS LOADING WORKS
+
+The news flow is:
+
+1. User opens a category page.
+2. script.js reads data-news-page from the body.
+3. script.js calls /api/news?category=...
+4. server/app.js routes the request to handleNewsApi().
+5. handleNewsApi() calls getNewsByCategory().
+6. news-service.js checks cache first.
+7. If cache is expired or missing, gdelt.js fetches fresh articles.
+8. The backend returns normalized article data as JSON.
+9. script.js renders those articles into cards on the page.
+
+
+12. NEWS CONFIGURATION
+
+In script.js there is a NEWS_CONFIG object.
+
+It defines, for each category:
+- a label
+- an icon
+- a search query
+- optional fallback data source
+
+Example:
+- politique uses local fallback through posts.json
+- other categories can use a local array fallback if the API fails
+
+This gives the website a graceful fallback instead of showing a broken page.
+
+
+13. FALLBACK CONTENT
+
+If the backend or external API fails:
+- script.js can load posts.json for politics
+- or use LOCAL_FALLBACKS defined in script.js for other categories
+
+This means the page still displays useful cards even if live content is unavailable.
+
+
+14. BACKEND ENTRY POINT
+
+The backend starts in server/app.js.
+
+This file:
+- creates the HTTP server
+- reads the request URL
+- routes requests
+- sends JSON responses for APIs
+- serves static files for normal page requests
+
+Main routes:
+- /api/auth/me
+- /api/auth/register
+- /api/auth/login
+- /api/auth/logout
+- /api/news
+
+If the request is not an API request and the method is GET:
+- static-server.js serves the HTML, CSS, JS, or JSON file
+
+
+15. STATIC FILE SERVING
+
+server/static-server.js serves local files from the project root.
+
+It:
+- sanitizes the path
+- prevents unsafe traversal outside the root directory
+- reads the requested file
+- returns it with the correct MIME type
+
+Examples:
+- / returns index.html
+- /style.css returns the stylesheet
+- /script.js returns the shared JavaScript
+
+
+16. AUTHENTICATION SYSTEM
+
+The authentication system is implemented in server/auth-service.js.
+
+It supports:
+- user registration
+- user login
+- session creation
+- session reading from cookies
+- logout
+
+The system is local and simple, but it is structured correctly for a small project.
+
+
+17. USER REGISTRATION FLOW
+
+Registration works like this:
+
+1. User submits the register form in auth.html.
+2. script.js sends POST /api/auth/register.
+3. server/app.js reads the JSON body.
+4. auth-service.js validates the name, email, and password.
+5. The server loads users from data/users.json.
+6. It checks if the email already exists.
+7. The password is hashed using crypto.scryptSync().
+8. A new user object is created with:
+   - id
+   - name
+   - email
+   - passwordHash
+   - createdAt
+9. The user is saved to data/users.json.
+10. A session token is created.
+11. The backend sends a cookie back to the browser.
+12. The frontend refreshes the auth UI.
+
+
+18. LOGIN FLOW
+
+Login works like this:
+
+1. User submits the login form.
+2. script.js sends POST /api/auth/login.
+3. auth-service.js validates the email and password format.
+4. users.json is read.
+5. The user with the matching email is searched.
+6. The password is verified against the stored hash.
+7. If valid, a session is created.
+8. A session cookie is returned.
+9. The frontend updates the UI to the logged-in state.
+
+
+19. PASSWORD SECURITY
+
+Passwords are not stored in plain text.
+
+They are protected with:
+- a random salt
+- scrypt hashing
+
+Stored format:
+- salt:derivedHash
+
+This is much better than storing raw passwords and is a good practice even for a small learning project.
+
+
+20. SESSION SYSTEM
+
+Sessions are stored in memory in a Map inside auth-service.js.
+
+The flow is:
+- createSession(user) generates a random token
+- the token is stored in the sessions map
+- the token is sent to the browser in a cookie
+- future requests read the cookie
+- getSessionFromRequest() finds the user from that token
+
+Important note:
+- users are persisted in data/users.json
+- sessions are not persisted
+
+So if the server restarts:
+- registered users remain
+- logged-in sessions are lost
+
+
+21. LOGOUT FLOW
+
+Logout works like this:
+
+1. The user clicks the logout button.
+2. script.js sends POST /api/auth/logout.
+3. auth-service.js removes the session token from memory.
+4. The backend sends an expired cookie.
+5. The frontend refreshes the UI to guest mode.
+
+
+22. COOKIE DETAILS
+
+The session cookie is built with:
+- HttpOnly
+- Path=/
+- SameSite=Lax
+
+That means:
+- JavaScript in the browser cannot directly read the cookie
+- the cookie is available across the whole site
+- it has some protection against cross-site request issues
+
+
+23. CORS SUPPORT
+
+The backend now includes local-development CORS support.
+
+This was added so auth can still work when the frontend is opened from:
+- localhost:3000
+- another localhost port like localhost:5500
+- local file mode in some setups
+
+server/app.js now:
+- handles OPTIONS preflight requests
+- sends Access-Control-Allow-Origin for local origins
+- sends Access-Control-Allow-Credentials so cookies can be used
+
+This is especially useful when using Live Server or another dev server for the frontend.
+
+
+24. AUTH STATUS CHECK
+
+When a page loads, hydrateAuthUi() calls:
+- GET /api/auth/me
+
+The backend checks the session cookie and returns:
+- authenticated: true/false
+- user: user object or null
+
+The frontend then:
+- updates the navbar
+- shows guest state or logged-in state
+- fills the account card if the user is logged in
+
+
+25. USER DATA FILE
+
+Registered users are stored in:
+- data/users.json
+
+Each user record contains:
+- id
+- name
+- email
+- passwordHash
+- createdAt
+
+This is a simple file-based database.
+
+It works well for:
+- learning
+- prototypes
+- small local demos
+
+It is not ideal for production because:
+- there is no real database engine
+- concurrent writes are limited
+- there is no advanced user management
+
+
+26. NEWS BACKEND SERVICE
+
+server/news-service.js handles category-based news requests.
+
+Its responsibilities:
+- validate the category
+- check whether data is cached
+- fetch live data if needed
+- store fresh results in cache
+- return a clean payload to the frontend
+
+Cache is stored in memory using a Map.
+
+Each cached entry stores:
+- category
+- source
+- fetchedAt
+- articles
+- expiresAt
+
+
+27. CACHING LOGIC
+
+The cache reduces repeated calls to the external API.
+
+How it works:
+- if cached data exists and has not expired, it is returned immediately
+- otherwise a fresh call is made to GDELT
+- the fresh result is cached for a duration from config.js
+
+Default TTL:
+- 15 minutes
+
+This improves:
+- speed
+- stability
+- API efficiency
+
+
+28. GDELT INTEGRATION
+
+server/gdelt.js connects to the GDELT DOC API.
+
+It:
+- builds a query string based on the selected category
+- requests JSON article data
+- normalizes the result into a frontend-friendly format
+
+The returned normalized article fields are:
+- title
+- url
+- image
+- sourceLabel
+- dateLabel
+- description
+
+
+29. CATEGORY QUERIES
+
+Category queries are defined in server/config.js.
+
+Examples:
+- politics query looks for government, parliament, diplomacy, reform, policy
+- economy query looks for economy, investment, business, finance, industry, market
+- sport query looks for sport, football, club, tournament, athlete
+
+These queries are used by GDELT to find recent articles related to Morocco.
+
+
+30. DATE NORMALIZATION
+
+GDELT dates are not always returned in a perfect browser-friendly format.
+
+gdelt.js includes normalizeDate() to:
+- parse valid dates directly
+- convert compact timestamps like YYYYMMDDHHMMSS into ISO format
+
+This makes date formatting more consistent in the frontend.
+
+
+31. CONFIG FILE
+
+server/config.js centralizes project configuration.
+
+It defines:
+- rootDir
+- dataDir
+- port
+- cacheTtlMs
+- sessionCookieName
+- categories and their queries
+
+This is useful because multiple server files can share the same values.
+
+
+32. PACKAGE.JSON
+
+package.json contains the basic project metadata and scripts.
+
+Available scripts:
+- npm start
+- npm run dev
+
+Both currently start:
+- node server/app.js
+
+
+33. HOW TO RUN THE PROJECT
+
+Steps:
+
+1. Install Node.js 18 or later.
+2. Open a terminal in the project root.
+3. Run:
+
+   npm start
+
+4. Open in browser:
+
+   http://localhost:3000
+
+Recommended:
+- run the project through the Node server, not by opening HTML files directly
+
+Why:
+- the backend API lives on port 3000
+- authentication needs the backend
+- news requests also depend on the backend
+
+
+34. REQUEST FLOW EXAMPLE FOR AUTH
+
+Example: login
+
+Browser:
+- user fills login form in auth.html
+- script.js sends POST /api/auth/login
+
+Server:
+- app.js receives the request
+- app.js calls loginUser() from auth-service.js
+- auth-service.js checks users.json and password hash
+- auth-service.js creates a session
+- app.js sends JSON response and Set-Cookie header
+
+Browser:
+- fetch includes credentials
+- browser stores the session cookie
+- script.js refreshes the UI
+
+
+35. REQUEST FLOW EXAMPLE FOR NEWS
+
+Example: politics page
+
+Browser:
+- user opens politique.html
+- script.js sees data-news-page="politique"
+- script.js requests /api/news?category=politique
+
+Server:
+- app.js routes to handleNewsApi()
+- news-service.js checks cache
+- gdelt.js fetches or cached data is returned
+- JSON response goes back to browser
+
+Browser:
+- script.js builds article cards
+- content appears in #news-feed
+
+
+36. FRONTEND UI HELPERS
+
+script.js also contains helper functions like:
+- renderNavbarAuth()
+- renderAccountCard()
+- setAuthMessage()
+- renderNewsCards()
+- updateFeedMeta()
+- formatDate()
+- escapeHtml()
+
+These are important because they keep the code organized and reusable.
+
+Examples:
+- escapeHtml() helps prevent unsafe HTML rendering
+- formatDate() gives nicer French-formatted dates
+- renderNewsCards() transforms article data into visible cards
+
+
+37. CURRENT STRENGTHS OF THE PROJECT
+
+What is already good about this project:
+
+- clear separation between frontend and backend
+- authentication is functional and uses hashed passwords
+- users are persisted locally
+- the site supports multiple editorial pages
+- live news is automated through the backend
+- cache reduces unnecessary external requests
+- fallback content prevents empty pages
+- the project is simple enough to understand but rich enough to demonstrate real full-stack behavior
+
+
+38. CURRENT LIMITATIONS
+
+Important limitations:
+
+- sessions are in memory only
+- there is no real database
+- there is no admin panel
+- there is no password reset
+- there is no email verification
+- the backend uses plain Node http instead of Express
+- there are no automated tests yet
+- the live news source depends on an external API being reachable
+
+
+39. GOOD NEXT IMPROVEMENTS
+
+Logical next steps for the project:
+
+- add automated tests
+- move users and sessions to a real database
+- add favorites for logged-in users
+- add profile editing
+- add article bookmarks/history
+- add admin content management
+- add environment-based configuration
+- add better logging and error handling
+- add session expiration
+- deploy the app online
+
+
+40. SIMPLE PROJECT MENTAL MODEL
+
+You can think of the whole project like this:
+
+Frontend:
+- displays pages
+- collects user actions
+- calls backend APIs
+- updates the interface
+
+Backend:
+- serves files
+- manages authentication
+- fetches live news
+- returns JSON
+
+Data:
+- users.json stores users
+- in-memory maps store sessions and cache
+- posts.json stores fallback article content
+
+
+41. FINAL CONCLUSION
+
+Maroc Info is a compact full-stack news website project.
+
+It starts as a polished editorial frontend, but behind it there is also:
+- a backend server
+- a local auth system
+- session cookies
+- dynamic API-based news loading
+- caching
+- fallback content
+
+That makes it a strong learning project because it covers:
+- frontend rendering
+- backend routing
+- API design
+- authentication
+- file persistence
+- external API integration
+- progressive enhancement for local development
+
+In short:
+- the frontend shows the experience
+- the backend powers the logic
+- the JSON files provide lightweight persistence
+- the whole app is structured like a real mini product

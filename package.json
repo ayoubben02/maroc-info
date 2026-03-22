@@ -1,0 +1,10 @@
+{
+  "name": "maroc-info",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Maroc Info with static frontend and a lightweight news proxy API.",
+  "scripts": {
+    "start": "node server/app.js",
+    "dev": "node server/app.js"
+  }
+}

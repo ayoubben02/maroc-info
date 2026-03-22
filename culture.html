@@ -4,122 +4,85 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Culture | Maroc Info</title>
-
-  <!-- Bootstrap CSS -->
+  <meta
+    name="description"
+    content="Culture marocaine: patrimoine, scenes contemporaines, festivals, artisanat et arts de vivre."
+  >
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
   <link rel="stylesheet" href="style.css">
 </head>
+<body data-news-page="culture">
+  <div class="site-shell">
+    <div id="navbar"></div>
 
-<body class="bg-light bg-gradient">
-
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="index.html">
-      <img src="https://res.cloudinary.com/dngsrwhxz/image/upload/w_200/f_auto,q_auto/v1767093889/maroc-info-logo_fdyu2n.png" alt="Maroc Info Logo">
-    </a>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="politique.html">POLITIQUE</a></li>
-        <li class="nav-item"><a class="nav-link" href="economie.html">ECONOMIE</a></li>
-        <li class="nav-item"><a class="nav-link" href="sport.html">SPORT</a></li>
-        <li class="nav-item">
-          <a class="nav-link active fw-bold text-danger" href="culture.html">CULTURE</a>
-        </li>
-        <li class="nav-item"><a class="nav-link" href="technologie.html">TECHNOLOGIE</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!-- PAGE HEADER -->
-<header class="py-5 bg-white shadow-sm">
-  <div class="container">
-    <h1 class="fw-bold">
-      <i class="bi bi-palette text-danger me-2"></i>
-      Culture & Patrimoine du Maroc
-    </h1>
-    <p class="text-muted mt-2">
-      Arts, traditions, festivals, littérature et richesse culturelle marocaine.
-    </p>
-  </div>
-</header>
-
-<!-- MAIN CONTENT -->
-<main class="container my-5">
-
-  <div class="row g-4">
-
-    <!-- ARTICLE CARD -->
-    <div class="col-md-4">
-      <div class="card h-100 shadow-sm">
-        <img src="https://source.unsplash.com/600x400/?morocco,tradition" class="card-img-top" alt="Traditions Maroc">
-        <div class="card-body">
-          <span class="badge bg-danger mb-2">Traditions</span>
-          <h5 class="card-title">Les traditions marocaines entre héritage et modernité</h5>
-          <p class="card-text text-muted">
-            Découverte des coutumes, artisanat et pratiques ancestrales.
-          </p>
+    <main class="container">
+      <section class="page-hero mt-3 mt-lg-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-8">
+            <span class="eyebrow">
+              <i class="bi bi-palette"></i>
+              Rubrique culture
+            </span>
+            <h1 class="page-title">Patrimoine vivant, creation contemporaine et imaginaires du Maroc</h1>
+            <p class="page-copy mb-0">
+              La culture marocaine ne se resume ni au patrimoine ni a la scene contemporaine: elle circule entre les deux,
+              entre tradition, transmission, reinterpretation et nouvelles formes de creation.
+            </p>
+          </div>
+          <div class="col-lg-4">
+            <div class="brief-card h-100">
+              <small>Angle editorial</small>
+              <h2 class="h4 mt-2">Raconter le pays autrement</h2>
+              <p class="text-muted mb-0">La rubrique culture met en avant les lieux, les gestes et les evenements qui donnent de la profondeur au recit national.</p>
+            </div>
+          </div>
         </div>
-        <div class="card-footer bg-white border-0">
-          <a href="#" class="btn btn-outline-danger btn-sm">Lire la suite</a>
-        </div>
-      </div>
-    </div>
+      </section>
 
-    <!-- ARTICLE CARD -->
-    <div class="col-md-4">
-      <div class="card h-100 shadow-sm">
-        <img src="https://source.unsplash.com/600x400/?festival,music" class="card-img-top" alt="Festivals Maroc">
-        <div class="card-body">
-          <span class="badge bg-danger mb-2">Festivals</span>
-          <h5 class="card-title">Festivals au Maroc : une scène artistique vibrante</h5>
-          <p class="card-text text-muted">
-            Musique, cinéma et événements culturels à travers le Royaume.
-          </p>
+      <section class="section-block pt-0">
+        <div class="row g-4 align-items-start mb-4">
+          <div class="col-lg-8">
+            <div class="content-panel h-100">
+              <h2 class="section-title mb-2" id="feed-status-title">Chargement des actualites...</h2>
+              <p class="section-copy mb-0" id="feed-status-copy">La rubrique tente de recuperer les derniers articles depuis une source publique.</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="spotlight-card h-100">
+              <div class="spotlight-icon"><i class="bi bi-broadcast"></i></div>
+              <h3 class="h5">Automatisation</h3>
+              <p class="text-muted mb-0">Les cartes ci-dessous se mettent a jour automatiquement selon la categorie culture.</p>
+            </div>
+          </div>
         </div>
-        <div class="card-footer bg-white border-0">
-          <a href="#" class="btn btn-outline-danger btn-sm">Lire la suite</a>
+        <div class="row g-4" id="news-feed"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-panel">
+          <div class="row g-4 align-items-center">
+            <div class="col-lg-8">
+              <h2 class="h4 mb-2">Culture</h2>
+              <p class="footer-note mb-0">Une rubrique plus elegante pour valoriser le patrimoine, les scenes artistiques et les imaginaires marocains.</p>
+            </div>
+            <div class="col-lg-4">
+              <div class="footer-links">
+                <a href="index.html">Accueil</a>
+                <a href="politique.html">Politique</a>
+                <a href="sport.html">Sport</a>
+                <a href="technologie.html">Technologie</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-
-    <!-- ARTICLE CARD -->
-    <div class="col-md-4">
-      <div class="card h-100 shadow-sm">
-        <img src="https://source.unsplash.com/600x400/?art,exhibition" class="card-img-top" alt="Art Maroc">
-        <div class="card-body">
-          <span class="badge bg-danger mb-2">Arts</span>
-          <h5 class="card-title">Arts visuels et création contemporaine</h5>
-          <p class="card-text text-muted">
-            Artistes marocains, expositions et nouvelles tendances créatives.
-          </p>
-        </div>
-        <div class="card-footer bg-white border-0">
-          <a href="#" class="btn btn-outline-danger btn-sm">Lire la suite</a>
-        </div>
-      </div>
-    </div>
-
+    </footer>
   </div>
-</main>
 
-<!-- FOOTER -->
-<footer class="bg-white border-top py-4">
-  <div class="container text-center text-muted">
-    © 2025 Maroc Info — Culture & Patrimoine
-  </div>
-</footer>
-
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

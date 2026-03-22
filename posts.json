@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Transparence publique: des controles renforces dans plusieurs services consulaires",
+    "content": "Des verifications administratives plus strictes ont ete engagees afin de securiser les procedures, suivre les depenses et retablir la confiance dans la gestion publique.",
+    "full": "Les services concernes ont renforce les mecanismes de controle interne, notamment sur les depenses, la tracabilite des dossiers et la supervision des operations sensibles. Cette orientation s'inscrit dans une logique de modernisation de l'action publique: clarifier les responsabilites, reduire les zones d'opacite et faire remonter plus vite les anomalies. Pour les observateurs, l'enjeu n'est pas seulement disciplinaire. Il s'agit aussi de credibiliser l'administration marocaine aupres des citoyens et des partenaires, en montrant que l'efficacite institutionnelle peut aller de pair avec l'exigence de transparence.",
+    "image": "https://f2.hespress.com/wp-content/uploads/2025/12/aeroport_police1.jpg",
+    "category": "politique"
+  },
+  {
+    "id": 2,
+    "title": "Sahara marocain: une sequence diplomatique suivie de pres par Rabat",
+    "content": "La diplomatie marocaine s'appuie sur une strategie de long terme, combinee a un travail d'influence et de coordination avec ses partenaires internationaux.",
+    "full": "Le dossier du Sahara reste l'un des marqueurs centraux de la politique etrangere du Royaume. Au-dela des declarations officielles, la dynamique repose sur des leviers concrets: multiplication des soutiens, consolidation des partenariats strategiques et mise en avant d'une approche de stabilite regionale. Cette sequence diplomatique est egalement suivie sur le plan economique et symbolique, car elle conditionne l'image du pays, sa capacite d'initiative et sa marge de manoeuvre dans plusieurs forums internationaux. Rabat cherche ainsi a installer un cadre durable, plus lisible pour ses allies comme pour son opinion publique.",
+    "image": "https://f2.hespress.com/wp-content/uploads/2025/12/sahara_marocain.jpg",
+    "category": "politique"
+  },
+  {
+    "id": 3,
+    "title": "Reformes institutionnelles: le tempo politique se joue aussi sur l'execution",
+    "content": "Entre annonces, textes et application concrete, la credibilite des reformes depend des delais, des moyens mobilises et de la lisibilite pour les citoyens.",
+    "full": "Dans le debat public marocain, la question n'est plus seulement de presenter des reformes, mais de montrer comment elles se traduisent dans la vie quotidienne. Mise en oeuvre, coordination ministerielle, pedagogie publique et indicateurs de suivi deviennent des sujets politiques a part entiere. Une reforme mal expliquee ou appliquee trop lentement perd en impact, meme lorsqu'elle repose sur une intention forte. Les institutions gagnent donc a travailler leur execution autant que leur communication, afin de transformer les annonces en resultats perceptibles.",
+    "image": "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=1200&q=80",
+    "category": "politique"
+  }
+]
